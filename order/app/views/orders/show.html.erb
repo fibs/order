@@ -1,0 +1,22 @@
+<h1>Listing orders for Table <%= @masa_no %></h1>
+
+<%= link_to 'New Order', new_order_path %> <br>
+<%= link_to 'Table List', tables_path %>
+
+<table>
+  <tr>
+    <th>Order</th>
+    <th>Price</th>
+  </tr>
+
+  <% @order.each do |order| %>
+      <tr>
+        <td><%= order.order %></td>
+        <td><%= order.price %></td>
+        <td><%= link_to 'Show', order_path(order) %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order_path(order),
+                        method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+</table>

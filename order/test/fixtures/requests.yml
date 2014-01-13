@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  masa_no: 1
+  order: MyText
+  price: 1
+
+two:
+  masa_no: 1
+  order: MyText
+  price: 1

@@ -1,0 +1,38 @@
+<h1>Editing order</h1>
+
+<%= link_to 'Back', orders_path %>
+
+<%= form_for :order, url: order_path(@order), method: :patch do |f| %>
+    <% if @order.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@order.errors.count, "error") %> prohibited
+            this order from being saved:</h2>
+          <ul>
+            <% @order.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <p>
+      <%= f.label :Masa_No %><br>
+      <%= f.text_field :masa_no %>
+    </p>
+
+    <p>
+      <%= f.label :sipariş %><br>
+      <%= f.text_field :order %>
+    </p>
+
+    <p>
+      <%= f.label :Fiyat %><br>
+      <%= f.text_area :price %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+
+<% end %>
+

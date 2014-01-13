@@ -1,0 +1,26 @@
+
+<%= link_to 'Back', tables_path %>
+
+<%= form_for :table, url:tables_path do |f| %>
+
+    <% if @tables.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@table.errors.count, "error") %> prohibited
+            this order from being saved:</h2>
+          <ul>
+            <% @tables.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <p>
+      <%= f.label :Masa_No %><br>
+      <%= f.text_field :masa_no %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
